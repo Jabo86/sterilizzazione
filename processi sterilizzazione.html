@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processo di Sterilizzazione</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0d1b2a, #1b263b);
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        header {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #00d4ff;
+        }
+        section {
+            background: rgba(20, 40, 60, 0.95);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #00d4ff;
+        }
+        section h2 {
+            color: #00d4ff;
+            text-align: center;
+        }
+        section h3 {
+            color: #3498db;
+            margin-top: 20px;
+        }
+        section h4 {
+            color: #66b3ff;
+            margin-top: 15px;
+        }
+        section p {
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+        .quiz-container {
+            text-align: center;
+        }
+        .quiz-selector select {
+            padding: 10px;
+            font-size: 1.2em;
+            background: rgba(30, 50, 70, 0.95);
+            color: #e0e0e0;
+            border: 1px solid #00d4ff;
+        }
+        .quiz-timer {
+            font-size: 1.5em;
+            color: #00d4ff;
+            margin: 10px 0;
+        }
+        .quiz-balls {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .quiz-ball {
+            width: 40px;
+            height: 40px;
+            background: rgba(30, 50, 70, 0.95);
+            border: 2px solid #00d4ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #e0e0e0;
+        }
+        .quiz-ball.correct { background: #00ff00; color: #000; }
+        .quiz-ball.incorrect { background: #ff0000; color: #000; }
+        .quiz-question {
+            font-size: 1.5em;
+            color: #00d4ff;
+            margin-bottom: 20px;
+        }
+        .quiz-options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .quiz-option {
+            background: rgba(30, 50, 70, 0.95);
+            padding: 15px 30px;
+            border-radius: 10px;
+            border: 1px solid #00d4ff;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .quiz-option:hover {
+            background: rgba(0, 212, 255, 0.3);
+        }
+        .quiz-feedback {
+            margin-top: 20px;
+            font-size: 1.2em;
+            display: none;
+        }
+        .correct { color: #00ff00; }
+        .incorrect { color: #ff0000; }
+        .quiz-result {
+            margin-top: 20px;
+            font-size: 1.5em;
+        }
+        .retry-button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            background: #00d4ff;
+            color: #000;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .retry-button:hover {
+            background: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Processo di Sterilizzazione</h1>
+    </header>
+    <div class="container">
+        <section id="introduzione">
+            <h2>Introduzione</h2>
+            <p>Per sterilizzazione si intende qualsiasi processo, fisico o chimico, che porta alla distruzione di tutte le forme di microrganismi viventi e altri agenti biologici. Tale definizione semplifica il concetto di sterilità che, al contrario, può essere definito solo su basi statistiche.</p>
+            <p>La norma tecnica UNI EN 556-1:2002 stabilisce che per dichiarare un prodotto sterile si deve avere la probabilità che al massimo non sia sterile un prodotto su 1 milione di prodotti sterilizzati, ovvero il livello di sicurezza di sterilità SAL (Sterility Assurance Level) sia pari a 6: 1:1.000.000 = 10⁻⁶.</p>
+            <p>Per assicurare tale risultato devono essere garantite specifiche condizioni fisiche che tengano conto della variabilità delle specie di microrganismi potenzialmente presenti sul dispositivo da trattare e, soprattutto, del loro possibile stato: forma vegetativa o sporigena o altre forme di agenti biologici non classici associati alle TSE.</p>
+            <p>Le spore, infatti, sono di gran lunga le forme più resistenti agli agenti sterilizzanti e per essere eliminate richiedono, rispetto alle forme vegetative, temperature più elevate (superiori a 100 °C) e tempi di esposizione maggiori.</p>
+        </section>
+
+        <section id="fasi">
+            <h2>Fasi del Processo di Sterilizzazione</h2>
+
+            <h3>Raccolta</h3>
+            <h4>Descrizione</h4>
+            <p>Questa fase consiste nella raccolta degli strumenti chirurgici e dei dispositivi medici utilizzati durante un intervento o una procedura. Gli strumenti possono essere contaminati da sangue, tessuti, secrezioni o altri materiali biologici.</p>
+            <h4>Procedura</h4>
+            <p>Gli operatori raccolgono gli strumenti immediatamente dopo l’uso, utilizzando guanti monouso e contenitori rigidi o sacchetti specifici per il trasporto. I taglienti (es. bisturi) vengono separati per evitare danni o rischi. Il materiale viene trasferito in un’area dedicata per la decontaminazione, riducendo al minimo il tempo tra uso e trattamento per prevenire l’essiccazione dei residui biologici.</p>
+
+            <h3>Decontaminazione Ferri Chirurgici</h3>
+            <h4>Descrizione</h4>
+            <p>La decontaminazione è il primo passo per ridurre la carica microbica e rimuovere i contaminanti organici (sangue, muco, ecc.) dagli strumenti, rendendoli sicuri per le fasi successive.</p>
+            <h4>Procedura</h4>
+            <p>Gli strumenti vengono immersi in una soluzione detergente-disinfettante a base enzimatica o chimica, seguendo le indicazioni del produttore. Si utilizza acqua a temperatura controllata (non troppo calda per evitare la coagulazione delle proteine). Gli strumenti vengono spazzolati manualmente o trattati con ultrasuoni per rimuovere residui ostinati, poi risciacquati con acqua per eliminare i residui della soluzione.</p>
+
+            <h3>Lavaggio</h3>
+            <h4>Descrizione</h4>
+            <p>Il lavaggio completa la pulizia degli strumenti, eliminando ogni residuo organico o chimico rimasto dopo la decontaminazione.</p>
+            <h4>Procedura</h4>
+            <p>Si effettua con lavastrumenti automatiche (termosdisinfettatrici) o manualmente. Nel lavaggio automatico, gli strumenti vengono caricati in cestelli specifici e sottoposti a cicli di lavaggio con detergenti neutri o enzimatici, seguiti da risciacquo con acqua demineralizzata per evitare depositi di calcare. Nel lavaggio manuale, si usano spazzole morbide e acqua corrente, con attenzione a giunture e cavità. Il processo termina con un controllo visivo per verificare la pulizia.</p>
+
+            <h3>Asciugatura</h3>
+            <h4>Descrizione</h4>
+            <p>L’asciugatura rimuove l’umidità residua dagli strumenti per prevenire la corrosione e la proliferazione microbica prima del confezionamento.</p>
+            <h4>Procedura</h4>
+            <p>Gli strumenti vengono asciugati con aria compressa sterile o panni monouso privi di pelucchi. In alternativa, si utilizzano armadi di asciugatura a temperatura controllata. È fondamentale evitare ristagni d’acqua, specialmente nelle parti cave o articolate, per garantire che gli strumenti siano completamente asciutti.</p>
+
+            <h3>Controllo Ferri Chirurgici</h3>
+            <h4>Descrizione</h4>
+            <p>Questa fase verifica l’integrità e la funzionalità degli strumenti dopo il lavaggio e l’asciugatura.</p>
+            <h4>Procedura</h4>
+            <p>Gli operatori controllano visivamente ogni strumento per rilevare danni (es. crepe, ruggine, usura) o residui di sporco. Si testa il funzionamento di forbici, pinze e altri strumenti articolati per assicurarsi che siano operativi. Gli strumenti difettosi vengono scartati o inviati alla manutenzione, mentre quelli idonei passano al confezionamento.</p>
+
+            <h3>Confezionamento</h3>
+            <h4>Descrizione</h4>
+            <p>Il confezionamento protegge gli strumenti puliti da contaminazioni esterne fino al momento dell’uso, mantenendo la sterilità dopo il ciclo di sterilizzazione.</p>
+            <h4>Procedura</h4>
+            <p>Gli strumenti vengono collocati in buste, vassoi o contenitori specifici per sterilizzazione (es. buste con indicatori chimici o contenitori rigidi). Si utilizzano materiali conformi alle norme (es. carta-porosa o tessuto non tessuto) che consentano la penetrazione del vapore o del gas sterilizzante. Gli strumenti vengono disposti in modo ordinato, evitando sovrapposizioni, e i pacchi vengono sigillati con nastro indicatore.</p>
+
+            <h3>Etichettatura e Tracciabilità Strumentario Chirurgico</h3>
+            <h4>Descrizione</h4>
+            <p>L’etichettatura garantisce la tracciabilità del processo, identificando il contenuto, la data di sterilizzazione e l’operatore responsabile.</p>
+            <h4>Procedura</h4>
+            <p>Su ogni confezione si applica un’etichetta con informazioni come il codice dello strumento, la data del processo, il numero di lotto della sterilizzatrice e la scadenza della sterilità (generalmente 6 mesi se ben conservata). Si registra il tutto in un sistema di tracciabilità (cartaceo o digitale) per monitorare il ciclo e risalire a eventuali problemi.</p>
+
+            <h3>Carico Materiale da Processare</h3>
+            <h4>Descrizione</h4>
+            <p>Questa fase prepara il materiale confezionato per il ciclo di sterilizzazione all’interno dell’autoclave o di un altro dispositivo sterilizzante.</p>
+            <h4>Procedura</h4>
+            <p>I pacchi vengono caricati nella sterilizzatrice rispettando le indicazioni del produttore (es. evitando sovraccarichi o sovrapposizioni). Si verifica il corretto posizionamento degli indicatori chimici o biologici per monitorare l’efficacia del processo. L’operatore seleziona il ciclo appropriato (es. vapore a 134°C) in base al tipo di materiale.</p>
+
+            <h3>Ciclo di Sterilizzazione</h3>
+            <h4>Descrizione</h4>
+            <p>Il ciclo di sterilizzazione elimina ogni forma di vita microbica, incluse le spore, attraverso processi fisici (calore, vapore) o chimici (gas).</p>
+            <h4>Procedura</h4>
+            <p>Il metodo più comune è la sterilizzazione a vapore in autoclave a 134°C per 3-5 minuti o a 121°C per 15-20 minuti, con pressione controllata. Si monitorano temperatura, pressione e tempo tramite indicatori fisici, chimici (che cambiano colore) e biologici (con spore test). Al termine, si verifica il successo del ciclo controllando gli indicatori.</p>
+
+            <h3>Scarico Materiale Processato</h3>
+            <h4>Descrizione</h4>
+            <p>Dopo la sterilizzazione, il materiale viene rimosso dalla sterilizzatrice per il raffreddamento e la verifica finale.</p>
+            <h4>Procedura</h4>
+            <p>I pacchi vengono estratti con attenzione per evitare danni o contaminazioni, lasciando tempo per il raffreddamento naturale (non forzato). Si controllano gli indicatori chimici per confermare l’esposizione al processo. I pacchi danneggiati o con indicatori non conformi vengono scartati e ri-processati.</p>
+
+            <h3>Stoccaggio</h3>
+            <h4>Descrizione</h4>
+            <p>Lo stoccaggio conserva gli strumenti sterili fino al loro utilizzo, mantenendo la sterilità.</p>
+            <h4>Procedura</h4>
+            <p>I pacchi vengono riposti in armadi o magazzini sterili, in ambienti asciutti, puliti e a temperatura controllata (15-25°C). Si evita l’esposizione a umidità, luce solare o contatto con superfici non sterili. Gli strumenti vengono organizzati per data di sterilizzazione, utilizzando prima quelli con scadenza più vicina (FIFO: First In, First Out).</p>
+        </section>
+
+        <section id="quiz">
+            <h2>Quiz sul Processo di Sterilizzazione</h2>
+            <div class="quiz-container">
+                <div class="quiz-selector">
+                    <select id="quiz-select" onchange="selectQuiz()">
+                        <option value="0">Seleziona un Quiz</option>
+                        <option value="1">Quiz 1</option>
+                        <option value="2">Quiz 2</option>
+                        <option value="3">Quiz 3</option>
+                        <option value="4">Quiz 4</option>
+                        <option value="5">Quiz 5</option>
+                    </select>
+                </div>
+                <div class="quiz-timer" id="quiz-timer" style="display: none;">Tempo rimanente: 30:00</div>
+                <div class="quiz-balls" id="quiz-balls" style="display: none;"></div>
+                <div class="quiz-question" id="quiz-question"></div>
+                <div class="quiz-options" id="quiz-options"></div>
+                <div class="quiz-feedback" id="quiz-feedback"></div>
+                <div class="quiz-result" id="quiz-result"></div>
+                <button class="retry-button" id="retry-button" style="display: none;">Riprova</button>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const allQuestions = [
+            // Quiz 1
+            [
+                { question: "Cosa distrugge la sterilizzazione?", options: ["Microrganismi viventi", "Residui chimici", "Materiali organici", "Strumenti danneggiati"], correct: "Microrganismi viventi" },
+                { question: "Quale norma definisce la sterilità?", options: ["UNI EN 556-1:2002", "UNI EN 1234", "ISO 9001", "UNI EN 2000"], correct: "UNI EN 556-1:2002" },
+                { question: "Qual è il SAL richiesto?", options: ["10⁻⁶", "10⁻³", "10⁻⁹", "10⁻¹"], correct: "10⁻⁶" },
+                { question: "Quale forma microbica è più resistente?", options: ["Spore", "Vegetative", "TSE", "Batteri"], correct: "Spore" },
+                { question: "Quale temperatura serve per le spore?", options: [">100°C", "<100°C", "50°C", "80°C"], correct: ">100°C" },
+                { question: "Cosa si raccoglie nella fase di raccolta?", options: ["Strumenti chirurgici", "Rifiuti", "Biancheria", "Contenitori"], correct: "Strumenti chirurgici" },
+                { question: "Quale DPI si usa nella raccolta?", options: ["Guanti monouso", "Mascherina", "Occhiali", "Grembiule"], correct: "Guanti monouso" },
+                { question: "Cosa rimuove la decontaminazione?", options: ["Contaminanti organici", "Ruggine", "Umidità", "Etichette"], correct: "Contaminanti organici" },
+                { question: "Quale soluzione si usa nella decontaminazione?", options: ["Enzimatica", "Acqua pura", "Alcol", "Sapone"], correct: "Enzimatica" },
+                { question: "Come si lavano gli strumenti automaticamente?", options: ["Termosdisinfettrice", "A mano", "Ultrasuoni", "Acqua calda"], correct: "Termosdisinfettrice" },
+                { question: "Cosa si usa per l’asciugatura?", options: ["Aria compressa sterile", "Panni bagnati", "Asciugacapelli", "Carta"], correct: "Aria compressa sterile" },
+                { question: "Cosa si verifica nel controllo?", options: ["Integrità", "Umidità", "Etichette", "Temperatura"], correct: "Integrità" },
+                { question: "Quale materiale si usa nel confezionamento?", options: ["Carta-porosa", "Plastica", "Tessuto comune", "Carta normale"], correct: "Carta-porosa" },
+                { question: "Cosa si applica nell’etichettatura?", options: ["Etichetta", "Nastro", "Sigillo", "Colla"], correct: "Etichetta" },
+                { question: "Dove si carica il materiale da sterilizzare?", options: ["Autoclave", "Armadio", "Lavatrice", "Contenitore"], correct: "Autoclave" },
+                { question: "Quale metodo usa il ciclo di sterilizzazione?", options: ["Vapore", "Acqua", "Aria calda", "Luce"], correct: "Vapore" },
+                { question: "Cosa si controlla nello scarico?", options: ["Indicatori chimici", "Temperatura", "Umidità", "Etichette"], correct: "Indicatori chimici" },
+                { question: "Dove si conservano gli strumenti sterili?", options: ["Armadi sterili", "Cassetti", "Scatole", "Ripiani aperti"], correct: "Armadi sterili" },
+                { question: "Quale fase separa i taglienti?", options: ["Raccolta", "Decontaminazione", "Lavaggio", "Asciugatura"], correct: "Raccolta" },
+                { question: "Cosa si evita nella decontaminazione?", options: ["Coagulazione proteine", "Asciugatura", "Danneggiamento", "Risciacquo"], correct: "Coagulazione proteine" },
+                { question: "Quale acqua si usa nel lavaggio?", options: ["Demineralizzata", "Calda", "Fredda", "Salata"], correct: "Demineralizzata" },
+                { question: "Cosa si evita nell’asciugatura?", options: ["Ristagni d’acqua", "Aria compressa", "Panni sterili", "Calore"], correct: "Ristagni d’acqua" },
+                { question: "Cosa si scarta nel controllo?", options: ["Strumenti difettosi", "Strumenti puliti", "Buste", "Etichette"], correct: "Strumenti difettosi" },
+                { question: "Cosa si registra nell’etichettatura?", options: ["Data", "Temperatura", "Umidità", "Peso"], correct: "Data" },
+                { question: "Quale indicatore si usa nel carico?", options: ["Chimico", "Fisico", "Termico", "Visivo"], correct: "Chimico" },
+                { question: "Quale temperatura usa il ciclo a vapore breve?", options: ["134°C", "100°C", "80°C", "50°C"], correct: "134°C" },
+                { question: "Cosa si evita nello scarico?", options: ["Danni ai pacchi", "Raffreddamento", "Controllo", "Stoccaggio"], correct: "Danni ai pacchi" },
+                { question: "Quale metodo si usa nello stoccaggio?", options: ["FIFO", "LIFO", "Random", "Peso"], correct: "FIFO" },
+                { question: "Quale fase segue la raccolta?", options: ["Decontaminazione", "Lavaggio", "Asciugatura", "Controllo"], correct: "Decontaminazione" },
+                { question: "Quale probabilità definisce la sterilità?", options: ["1 su 1.000.000", "1 su 100", "1 su 1.000", "1 su 10"], correct: "1 su 1.000.000" }
+            ],
+            // Quiz 2
+            [
+                { question: "Quale processo definisce la sterilizzazione?", options: ["Fisico o chimico", "Manuale", "Termico", "Visivo"], correct: "Fisico o chimico" },
+                { question: "Quale livello di SAL è richiesto?", options: ["10⁻⁶", "10⁻⁵", "10⁻⁴", "10⁻²"], correct: "10⁻⁶" },
+                { question: "Cosa considera la sterilizzazione?", options: ["Variabilità microrganismi", "Peso strumenti", "Colore strumenti", "Dimensione"], correct: "Variabilità microrganismi" },
+                { question: "Quale forma richiede tempi maggiori?", options: ["Spore", "Vegetative", "Virus", "Funghi"], correct: "Spore" },
+                { question: "Quale fase raccoglie gli strumenti usati?", options: ["Raccolta", "Decontaminazione", "Lavaggio", "Asciugatura"], correct: "Raccolta" },
+                { question: "Cosa si usa per trasportare nella raccolta?", options: ["Contenitori rigidi", "Sacchetti di carta", "Scatole aperte", "Panni"], correct: "Contenitori rigidi" },
+                { question: "Quale fase riduce la carica microbica?", options: ["Decontaminazione", "Raccolta", "Lavaggio", "Asciugatura"], correct: "Decontaminazione" },
+                { question: "Cosa si usa per spazzolare nella decontaminazione?", options: ["Ultrasuoni", "Acqua", "Aria", "Panni"], correct: "Ultrasuoni" },
+                { question: "Quale macchina si usa nel lavaggio?", options: ["Termosdisinfettrice", "Autoclave", "Asciugatrice", "Frigorifero"], correct: "Termosdisinfettrice" },
+                { question: "Quale fase previene la corrosione?", options: ["Asciugatura", "Lavaggio", "Confezionamento", "Controllo"], correct: "Asciugatura" },
+                { question: "Cosa si testa nel controllo?", options: ["Funzionalità", "Umidità", "Peso", "Colore"], correct: "Funzionalità" },
+                { question: "Quale fase protegge dalla contaminazione?", options: ["Confezionamento", "Etichettatura", "Carico", "Stoccaggio"], correct: "Confezionamento" },
+                { question: "Cosa si usa per sigillare i pacchi?", options: ["Nastro indicatore", "Colla", "Filo", "Carta"], correct: "Nastro indicatore" },
+                { question: "Quale fase include il numero di lotto?", options: ["Etichettatura", "Confezionamento", "Carico", "Scarico"], correct: "Etichettatura" },
+                { question: "Cosa si evita nel carico?", options: ["Sovraccarichi", "Indicatori", "Vapore", "Etichette"], correct: "Sovraccarichi" },
+                { question: "Quale fase elimina le spore?", options: ["Ciclo sterilizzazione", "Carico", "Scarico", "Stoccaggio"], correct: "Ciclo sterilizzazione" },
+                { question: "Quale indicatore si usa nel ciclo?", options: ["Biologico", "Termico", "Visivo", "Sonoro"], correct: "Biologico" },
+                { question: "Quale fase segue il ciclo?", options: ["Scarico", "Carico", "Stoccaggio", "Etichettatura"], correct: "Scarico" },
+                { question: "Cosa si controlla nello stoccaggio?", options: ["Umidità", "Peso", "Colore", "Dimensione"], correct: "Umidità" },
+                { question: "Quale fase usa guanti nella raccolta?", options: ["Raccolta", "Decontaminazione", "Lavaggio", "Asciugatura"], correct: "Raccolta" },
+                { question: "Cosa si risciacqua nella decontaminazione?", options: ["Strumenti", "Contenitori", "Panni", "Buste"], correct: "Strumenti" },
+                { question: "Quale detergente si usa nel lavaggio?", options: ["Neutro", "Acido", "Basico", "Alcolico"], correct: "Neutro" },
+                { question: "Quale panno si usa nell’asciugatura?", options: ["Senza pelucchi", "Bagnato", "Normale", "Usato"], correct: "Senza pelucchi" },
+                { question: "Dove si inviano strumenti difettosi?", options: ["Manutenzione", "Stoccaggio", "Lavaggio", "Raccolta"], correct: "Manutenzione" },
+                { question: "Quale informazione è sull’etichetta?", options: ["Scadenza", "Peso", "Colore", "Dimensione"], correct: "Scadenza" },
+                { question: "Quale ciclo si seleziona nel carico?", options: ["Vapore 134°C", "Acqua calda", "Aria fredda", "Luce UV"], correct: "Vapore 134°C" },
+                { question: "Cosa si lascia nello scarico?", options: ["Raffreddamento", "Vapore", "Umidità", "Calore"], correct: "Raffreddamento" },
+                { question: "Quale temperatura si usa nello stoccaggio?", options: ["15-25°C", "0-10°C", "30-40°C", "50°C"], correct: "15-25°C" },
+                { question: "Quale fase segue il lavaggio?", options: ["Asciugatura", "Decontaminazione", "Controllo", "Confezionamento"], correct: "Asciugatura" },
+                { question: "Quale agente biologico è associato alle TSE?", options: ["Non classico", "Spore", "Vegetativo", "Virus"], correct: "Non classico" }
+            ],
+            // Quiz 3
+            [
+                { question: "Quale definizione ha la sterilizzazione?", options: ["Distruzione microrganismi", "Pulizia strumenti", "Asciugatura", "Confezionamento"], correct: "Distruzione microrganismi" },
+                { question: "Quale probabilità definisce un prodotto sterile?", options: ["1 su 1.000.000", "1 su 10.000", "1 su 100", "1 su 1.000"], correct: "1 su 1.000.000" },
+                { question: "Quale stato microbico è più resistente?", options: ["Sporigeno", "Vegetativo", "Virale", "Fungino"], correct: "Sporigeno" },
+                { question: "Quale fase iniziale raccoglie il materiale?", options: ["Raccolta", "Decontaminazione", "Lavaggio", "Asciugatura"], correct: "Raccolta" },
+                { question: "Cosa si evita nella raccolta?", options: ["Essiccazione residui", "Controllo", "Lavaggio", "Asciugatura"], correct: "Essiccazione residui" },
+                { question: "Quale fase usa una soluzione detergente?", options: ["Decontaminazione", "Raccolta", "Lavaggio", "Confezionamento"], correct: "Decontaminazione" },
+                { question: "Cosa si usa manualmente nella decontaminazione?", options: ["Spazzole", "Panni", "Aria", "Acqua"], correct: "Spazzole" },
+                { question: "Quale fase completa la pulizia?", options: ["Lavaggio", "Decontaminazione", "Asciugatura", "Controllo"], correct: "Lavaggio" },
+                { question: "Quale acqua evita il calcare nel lavaggio?", options: ["Demineralizzata", "Calda", "Fredda", "Distillata"], correct: "Demineralizzata" },
+                { question: "Quale fase usa panni monouso?", options: ["Asciugatura", "Lavaggio", "Confezionamento", "Controllo"], correct: "Asciugatura" },
+                { question: "Cosa si rileva nel controllo?", options: ["Danni", "Umidità", "Peso", "Colore"], correct: "Danni" },
+                { question: "Quale fase usa buste specifiche?", options: ["Confezionamento", "Etichettatura", "Carico", "Scarico"], correct: "Confezionamento" },
+                { question: "Cosa si registra nella tracciabilità?", options: ["Numero lotto", "Peso", "Colore", "Dimensione"], correct: "Numero lotto" },
+                { question: "Quale fase prepara l’autoclave?", options: ["Carico", "Ciclo", "Scarico", "Stoccaggio"], correct: "Carico" },
+                { question: "Quale tempo usa il ciclo a 121°C?", options: ["15-20 minuti", "3-5 minuti", "10 minuti", "30 minuti"], correct: "15-20 minuti" },
+                { question: "Quale fase verifica il processo?", options: ["Scarico", "Carico", "Ciclo", "Stoccaggio"], correct: "Scarico" },
+                { question: "Quale ambiente si usa nello stoccaggio?", options: ["Asciutto", "Umido", "Caldo", "Freddo"], correct: "Asciutto" },
+                { question: "Quale fase usa contenitori rigidi?", options: ["Raccolta", "Decontaminazione", "Lavaggio", "Asciugatura"], correct: "Raccolta" },
+                { question: "Cosa si monitora nella decontaminazione?", options: ["Temperatura", "Peso", "Colore", "Dimensione"], correct: "Temperatura" },
+                { question: "Quale fase fa il controllo visivo dopo il lavaggio?", options: ["Lavaggio", "Decontaminazione", "Asciugatura", "Controllo"], correct: "Lavaggio" },
+                { question: "Quale fase usa aria sterile?", options: ["Asciugatura", "Lavaggio", "Confezionamento", "Carico"], correct: "Asciugatura" },
+                { question: "Cosa si testa nel controllo?", options: ["Forbici", "Buste", "Etichette", "Panni"], correct: "Forbici" },
+                { question: "Quale materiale permette il vapore?", options: ["Carta-porosa", "Plastica", "Metallo", "Vetro"], correct: "Carta-porosa" },
+                { question: "Quale fase usa indicatori biologici?", options: ["Ciclo sterilizzazione", "Carico", "Scarico", "Etichettatura"], correct: "Ciclo sterilizzazione" },
+                { question: "Cosa si evita nel confezionamento?", options: ["Sovrapposizioni", "Indicatori", "Nastro", "Buste"], correct: "Sovrapposizioni" },
+                { question: "Quale fase segue l’etichettatura?", options: ["Carico", "Ciclo", "Scarico", "Stoccaggio"], correct: "Carico" },
+                { question: "Quale indicatore cambia colore?", options: ["Chimico", "Biologico", "Fisico", "Termico"], correct: "Chimico" },
+                { question: "Cosa si organizza nello stoccaggio?", options: ["Data", "Peso", "Colore", "Dimensione"], correct: "Data" },
+                { question: "Quale fase segue l’asciugatura?", options: ["Controllo", "Lavaggio", "Decontaminazione", "Confezionamento"], correct: "Controllo" },
+                { question: "Quale norma usa il SAL?", options: ["UNI EN 556-1:2002", "ISO 14001", "UNI EN 2000", "ISO 9001"], correct: "UNI EN 556-1:2002" }
+            ],
+            // Quiz 4
+            [
+                { question: "Quale agente elimina la sterilizzazione?", options: ["Microrganismi", "Ruggine", "Umidità", "Polvere"], correct: "Microrganismi" },
+                { question: "Quale SAL è 1 su 1.000.000?", options: ["10⁻⁶", "10⁻⁵", "10⁻³", "10⁻²"], correct: "10⁻⁶" },
+                { question: "Quale forma è associata alle TSE?", options: ["Non classica", "Sporigena", "Vegetativa", "Batterica"], correct: "Non classica" },
+                { question: "Quale fase separa gli strumenti taglienti?", options: ["Raccolta", "Decontaminazione", "Lavaggio", "Asciugatura"], correct: "Raccolta" },
+                { question: "Cosa si usa nella decontaminazione?", options: ["Soluzione enzimatica", "Acqua calda", "Sapone", "Alcol"], correct: "Soluzione enzimatica" },
+                { question: "Quale fase usa ultrasuoni?", options: ["Decontaminazione", "Raccolta", "Lavaggio", "Confezionamento"], correct: "Decontaminazione" },
+                { question: "Quale fase usa detergenti neutri?", options: ["Lavaggio", "Decontaminazione", "Asciugatura", "Controllo"], correct: "Lavaggio" },
+                { question: "Quale fase previene la proliferazione?", options: ["Asciugatura", "Lavaggio", "Confezionamento", "Controllo"], correct: "Asciugatura" },
+                { question: "Cosa si controlla visivamente nel lavaggio?", options: ["Pulizia", "Danni", "Umidità", "Peso"], correct: "Pulizia" },
+                { question: "Quale fase usa aria compressa sterile?", options: ["Asciugatura", "Lavaggio", "Confezionamento", "Carico"], correct: "Asciugatura" },
+                { question: "Quale fase scarta strumenti usurati?", options: ["Controllo", "Lavaggio", "Decontaminazione", "Confezionamento"], correct: "Controllo" },
+                { question: "Quale fase usa contenitori per sterilizzazione?", options: ["Confezionamento", "Raccolta", "Carico", "Scarico"], correct: "Confezionamento" },
+                { question: "Cosa si applica nell’etichettatura?", options: ["Codice strumento", "Peso", "Colore", "Dimensione"], correct: "Codice strumento" },
+                { question: "Quale fase carica il materiale?", options: ["Carico", "Ciclo", "Scarico", "Stoccaggio"], correct: "Carico" },
+                { question: "Quale temperatura usa il ciclo breve?", options: ["134°C", "121°C", "100°C", "80°C"], correct: "134°C" },
+                { question: "Quale fase raffredda il materiale?", options: ["Scarico", "Carico", "Ciclo", "Stoccaggio"], correct: "Scarico" },
+                { question: "Quale fase usa armadi sterili?", options: ["Stoccaggio", "Carico", "Scarico", "Etichettatura"], correct: "Stoccaggio" },
+                { question: "Cosa si trasferisce nella raccolta?", options: ["Strumenti", "Rifiuti", "Biancheria", "Contenitori"], correct: "Strumenti" },
+                { question: "Quale fase risciacqua gli strumenti?", options: ["Decontaminazione", "Lavaggio", "Asciugatura", "Controllo"], correct: "Decontaminazione" },
+                { question: "Quale fase usa cestelli specifici?", options: ["Lavaggio", "Decontaminazione", "Asciugatura", "Carico"], correct: "Lavaggio" },
+                { question: "Quale fase usa panni senza pelucchi?", options: ["Asciugatura", "Lavaggio", "Confezionamento", "Controllo"], correct: "Asciugatura" },
+                { question: "Quale fase testa le pinze?", options: ["Controllo", "Lavaggio", "Decontaminazione", "Confezionamento"], correct: "Controllo" },
+                { question: "Quale fase usa nastro indicatore?", options: ["Confezionamento", "Etichettatura", "Carico", "Scarico"], correct: "Confezionamento" },
+                { question: "Quale fase registra la data?", options: ["Etichettatura", "Confezionamento", "Carico", "Stoccaggio"], correct: "Etichettatura" },
+                { question: "Quale fase monitora la pressione?", options: ["Ciclo sterilizzazione", "Carico", "Scarico", "Etichettatura"], correct: "Ciclo sterilizzazione" },
+                { question: "Cosa si verifica nello scarico?", options: ["Indicatori", "Peso", "Colore", "Dimensione"], correct: "Indicatori" },
+                { question: "Quale fase usa il metodo FIFO?", options: ["Stoccaggio", "Carico", "Scarico", "Etichettatura"], correct: "Stoccaggio" },
+                { question: "Quale fase segue il controllo?", options: ["Confezionamento", "Lavaggio", "Asciugatura", "Decontaminazione"], correct: "Confezionamento" },
+                { question: "Quale tempo usa il ciclo a 134°C?", options: ["3-5 minuti", "15-20 minuti", "10 minuti", "30 minuti"], correct: "3-5 minuti" },
+                { question: "Quale norma definisce il SAL?", options: ["UNI EN 556-1:2002", "ISO 9001", "UNI EN 1234", "ISO 14001"], correct: "UNI EN 556-1:2002" }
+            ],
+            // Quiz 5
+            [
+                { question: "Cosa include la sterilizzazione?", options: ["Agenti biologici", "Ruggine", "Umidità", "Polvere"], correct: "Agenti biologici" },
+                { question: "Quale probabilità usa la norma UNI EN 556-1?", options: ["1 su 1.000.000", "1 su 10.000", "1 su 100", "1 su 1.000"], correct: "1 su 1.000.000" },
+                { question: "Quale forma richiede alte temperature?", options: ["Spore", "Vegetative", "Virus", "Funghi"], correct: "Spore" },
+                { question: "Quale fase raccoglie strumenti contaminati?", options: ["Raccolta", "Decontaminazione", "Lavaggio", "Asciugatura"], correct: "Raccolta" },
+                { question: "Quale fase usa guanti monouso?", options: ["Raccolta", "Decontaminazione", "Lavaggio", "Confezionamento"], correct: "Raccolta" },
+                { question: "Quale fase usa spazzole morbide?", options: ["Decontaminazione", "Raccolta", "Lavaggio", "Controllo"], correct: "Decontaminazione" },
+                { question: "Quale fase usa acqua demineralizzata?", options: ["Lavaggio", "Decontaminazione", "Asciugatura", "Controllo"], correct: "Lavaggio" },
+                { question: "Quale fase rimuove l’umidità?", options: ["Asciugatura", "Lavaggio", "Confezionamento", "Controllo"], correct: "Asciugatura" },
+                { question: "Quale fase verifica la funzionalità?", options: ["Controllo", "Lavaggio", "Decontaminazione", "Confezionamento"], correct: "Controllo" },
+                { question: "Quale fase usa buste sigillate?", options: ["Confezionamento", "Etichettatura", "Carico", "Scarico"], correct: "Confezionamento" },
+                { question: "Quale fase registra il lotto?", options: ["Etichettatura", "Confezionamento", "Carico", "Stoccaggio"], correct: "Etichettatura" },
+                { question: "Quale fase evita sovrapposizioni nel carico?", options: ["Carico", "Ciclo", "Scarico", "Stoccaggio"], correct: "Carico" },
+                { question: "Quale fase usa vapore a 121°C?", options: ["Ciclo sterilizzazione", "Carico", "Scarico", "Etichettatura"], correct: "Ciclo sterilizzazione" },
+                { question: "Quale fase controlla i pacchi?", options: ["Scarico", "Carico", "Ciclo", "Stoccaggio"], correct: "Scarico" },
+                { question: "Quale fase conserva gli strumenti?", options: ["Stoccaggio", "Carico", "Scarico", "Etichettatura"], correct: "Stoccaggio" },
+                { question: "Cosa si usa per trasportare nella raccolta?", options: ["Sacchetti specifici", "Panni", "Scatole", "Buste"], correct: "Sacchetti specifici" },
+                { question: "Quale fase usa ultrasuoni per residui?", options: ["Decontaminazione", "Lavaggio", "Asciugatura", "Controllo"], correct: "Decontaminazione" },
+                { question: "Quale fase usa termosdisinfettrici?", options: ["Lavaggio", "Decontaminazione", "Asciugatura", "Carico"], correct: "Lavaggio" },
+                { question: "Quale fase usa armadi di asciugatura?", options: ["Asciugatura", "Lavaggio", "Confezionamento", "Controllo"], correct: "Asciugatura" },
+                { question: "Quale fase invia strumenti alla manutenzione?", options: ["Controllo", "Lavaggio", "Decontaminazione", "Confezionamento"], correct: "Controllo" },
+                { question: "Quale fase usa tessuto non tessuto?", options: ["Confezionamento", "Etichettatura", "Carico", "Scarico"], correct: "Confezionamento" },
+                { question: "Quale fase include la scadenza?", options: ["Etichettatura", "Confezionamento", "Carico", "Stoccaggio"], correct: "Etichettatura" },
+                { question: "Quale fase usa indicatori chimici nel carico?", options: ["Carico", "Ciclo", "Scarico", "Stoccaggio"], correct: "Carico" },
+                { question: "Quale fase monitora il tempo?", options: ["Ciclo sterilizzazione", "Carico", "Scarico", "Etichettatura"], correct: "Ciclo sterilizzazione" },
+                { question: "Quale fase raffredda naturalmente?", options: ["Scarico", "Carico", "Ciclo", "Stoccaggio"], correct: "Scarico" },
+                { question: "Quale fase evita la luce solare?", options: ["Stoccaggio", "Carico", "Scarico", "Etichettatura"], correct: "Stoccaggio" },
+                { question: "Quale fase segue la decontaminazione?", options: ["Lavaggio", "Raccolta", "Asciugatura", "Controllo"], correct: "Lavaggio" },
+                { question: "Quale tempo usa il ciclo a 121°C?", options: ["15-20 minuti", "3-5 minuti", "10 minuti", "30 minuti"], correct: "15-20 minuti" },
+                { question: "Quale fase usa il SAL 10⁻⁶?", options: ["Ciclo sterilizzazione", "Carico", "Scarico", "Stoccaggio"], correct: "Ciclo sterilizzazione" },
+                { question: "Quale norma regola la sterilità?", options: ["UNI EN 556-1:2002", "ISO 9001", "UNI EN 2000", "ISO 14001"], correct: "UNI EN 556-1:2002" }
+            ]
+        ];
+
+        let currentQuiz = null;
+        let currentQuestionIndex = 0;
+        let correctAnswers = 0;
+        let timerInterval = null;
+
+        function selectQuiz() {
+            const quizSelect = document.getElementById('quiz-select');
+            const selectedQuiz = parseInt(quizSelect.value);
+            if (selectedQuiz === 0) {
+                resetQuiz();
+                return;
+            }
+            resetQuiz();
+            currentQuiz = shuffleArray([...allQuestions[selectedQuiz - 1]]);
+            startQuiz();
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function startQuiz() {
+            document.getElementById('quiz-timer').style.display = 'block';
+            document.getElementById('quiz-balls').style.display = 'flex';
+            const ballsContainer = document.getElementById('quiz-balls');
+            ballsContainer.innerHTML = '';
+            for (let i = 1; i <= 30; i++) {
+                const ball = document.createElement('div');
+                ball.className = 'quiz-ball';
+                ball.textContent = i;
+                ballsContainer.appendChild(ball);
+            }
+            currentQuestionIndex = 0;
+            correctAnswers = 0;
+            startTimer();
+            loadQuestion();
+        }
+
+        function startTimer() {
+            let timeLeft = 30 * 60; // 30 minuti in secondi
+            const timerDisplay = document.getElementById('quiz-timer');
+            timerInterval = setInterval(() => {
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                timerDisplay.textContent = `Tempo rimanente: ${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+                timeLeft--;
+                if (timeLeft < 0) {
+                    clearInterval(timerInterval);
+                    endQuiz();
+                }
+            }, 1000);
+        }
+
+        function loadQuestion() {
+            if (currentQuestionIndex >= currentQuiz.length) {
+                endQuiz();
+                return;
+            }
+            const question = currentQuiz[currentQuestionIndex];
+            document.getElementById('quiz-question').textContent = question.question;
+            const optionsContainer = document.getElementById('quiz-options');
+            optionsContainer.innerHTML = '';
+            question.options.forEach(option => {
+                const optionElement = document.createElement('div');
+                optionElement.className = 'quiz-option';
+                optionElement.textContent = option;
+                optionElement.onclick = () => checkAnswer(option, question.correct);
+                optionsContainer.appendChild(optionElement);
+            });
+            document.getElementById('quiz-feedback').style.display = 'none';
+        }
+
+        function checkAnswer(selected, correct) {
+            const feedback = document.getElementById('quiz-feedback');
+            const balls = document.getElementsByClassName('quiz-ball');
+            if (selected === correct) {
+                feedback.textContent = 'Risposta corretta!';
+                feedback.className = 'quiz-feedback correct';
+                balls[currentQuestionIndex].classList.add('correct');
+                correctAnswers++;
+            } else {
+                feedback.textContent = `Risposta sbagliata. La risposta corretta era: ${correct}`;
+                feedback.className = 'quiz-feedback incorrect';
+                balls[currentQuestionIndex].classList.add('incorrect');
+            }
+            feedback.style.display = 'block';
+            currentQuestionIndex++;
+            setTimeout(loadQuestion, 1500);
+        }
+
+        function endQuiz() {
+            clearInterval(timerInterval);
+            document.getElementById('quiz-timer').style.display = 'none';
+            document.getElementById('quiz-question').textContent = '';
+            document.getElementById('quiz-options').innerHTML = '';
+            document.getElementById('quiz-feedback').style.display = 'none';
+            const result = document.getElementById('quiz-result');
+            result.innerHTML = `Quiz completato! Risposte corrette: ${correctAnswers} su ${currentQuiz.length}`;
+            document.getElementById('retry-button').style.display = 'block';
+        }
+
+        function resetQuiz() {
+            clearInterval(timerInterval);
+            document.getElementById('quiz-timer').style.display = 'none';
+            document.getElementById('quiz-balls').style.display = 'none';
+            document.getElementById('quiz-question').textContent = '';
+            document.getElementById('quiz-options').innerHTML = '';
+            document.getElementById('quiz-feedback').style.display = 'none';
+            document.getElementById('quiz-result').innerHTML = '';
+            document.getElementById('retry-button').style.display = 'none';
+        }
+
+        document.getElementById('retry-button').onclick = () => {
+            resetQuiz();
+            startQuiz();
+        };
+    </script>
+</body>
+</html>
